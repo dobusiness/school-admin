@@ -1,10 +1,10 @@
-import { ClientPage } from './app.po';
+import { AppUiAdminPage } from './app.po';
 
-describe('client App', function() {
-  let page: ClientPage;
+describe('app-ui-admin App', () => {
+  let page: AppUiAdminPage;
 
   beforeEach(() => {
-    page = new ClientPage();
+    page = new AppUiAdminPage();
   });
 
   it('should display message saying app works', () => {
