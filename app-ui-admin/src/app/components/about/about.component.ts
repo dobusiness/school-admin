@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { StudentsService, Student} from '../../services/students.service';
 
 @Component({
   selector: 'app-about',
@@ -6,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  student:any = {};
+
+  constructor( private activateRoute: ActivatedRoute,
+  private _studentService: StudentsService) {
+
+      this.activateRoute.params.subscribe( params => {
+        console.log(params['id']);
+        this.student = this._studentService.getStudent(params['id']);
+      });
+
+   }
 
   ngOnInit() {
   }

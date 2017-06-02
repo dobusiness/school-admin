@@ -1,15 +1,16 @@
 <h1> Alumnos <small> en general </small> </h1>
 <hr>
 <div class="card-columns">
-<div class="card">
-    <img class="card-img-top img-fluid" src="..." alt="Card image cap">
+<div class="card" *ngFor="let student of students; let i = index;">
+    <img class="card-img-top img-fluid" [src]="student.img" [alt]="student.nombre">
     <div class="card-block">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      <button type="button" class="btn btn-outline-primary btn-block">
+      <h4 class="card-title">{{ student.nombre }}</h4>
+      <p class="card-text">{{ student.descripcion }}</p>
+      <p class="card-text"><small class="text-muted">{{ student.ciudad }}</small></p>
+      <button (click)="showStudent(i);" type="button" class="btn btn-outline-primary btn-block">
         Ver mas...
       </button>
+      <!--<a [routerLink]="['/about', i]" class="btn btn-outline-primary btn-block"> Ver mas link... </a>-->
     </div>
   </div>
 </div>
