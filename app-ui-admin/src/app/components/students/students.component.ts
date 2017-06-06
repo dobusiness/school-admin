@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentsService, Student } from '../../services/students.service';
+import { StudentsService } from '../../services/students.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,15 +8,17 @@ import { Router } from '@angular/router';
 })
 export class StudentsComponent implements OnInit {
 
-  students:Student[] = [];
+  //students:Student[] = [];
 
-  constructor(private _studentsService:StudentsService,
+  constructor(public _studentsService:StudentsService,
     private router:Router) { 
 
   }
 
   ngOnInit() {
-    this.students = this._studentsService.getStudents();
+    //this.students = this._studentsService.getStudents();
+    this._studentsService.getStudents("test")
+    .subscribe();
   }
 
   showStudent( idx: number) {

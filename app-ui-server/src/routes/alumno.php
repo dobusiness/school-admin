@@ -17,7 +17,7 @@ $app->add(function ($req, $res, $next) {
 
 //Get All Alumnos
 $app->get('/api/alumnos', function(Request $request, Response $response, $args){
-     $sql = "SELECT * FROM customers";
+    $sql = "SELECT * FROM alumnos";
     try{
         // Get DB Object
         $db = new db();

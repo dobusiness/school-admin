@@ -1,7 +1,7 @@
 <h1> Alumnos <small> en general </small> </h1>
 <hr>
 <div class="card-columns">
-<div class="card" *ngFor="let student of students; let i = index;">
+<div class="card" *ngFor="let student of _studentsService.students; let i = index;">
     <img class="card-img-top img-fluid" [src]="student.img" [alt]="student.nombre">
     <div class="card-block">
       <h4 class="card-title">{{ student.nombre }}</h4>
