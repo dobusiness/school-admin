@@ -7,8 +7,10 @@ export class StudentsService {
 
     students:any[] = [];
 
-    urlBusqueda:string = "http://www.serprosac.com/api/public/index.php/api/alumnos";
-    
+    hostName:string = "http://www.serprosac.com";
+    rootAPI: string = "/api";
+    urlBusqueda:string = this.hostName + this.rootAPI + "/public/alumnos";
+
     constructor(private http:Http) {
         console.log("Servicio listo para usar!!!");
     }
