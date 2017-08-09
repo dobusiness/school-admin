@@ -7,7 +7,7 @@ export class StudentsService {
 
     students:any[] = [];
 
-    hostName:string = "http://www.serprosac.com";
+    hostName:string = "http://localhost";//"http://www.serprosac.com";
     rootAPI: string = "/api";
     urlBusqueda:string = this.hostName + this.rootAPI + "/public/alumnos";
 

@@ -2,16 +2,6 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-$config['displayErrorDetails'] = true;
-$config['addContentLengthHeader'] = false;
-
-$config['db']['host']   = "localhost";
-$config['db']['user']   = "serprosa_admin";
-$config['db']['pass']   = "serprosac$2017";
-$config['db']['dbname'] = "serprosa_capacitacion";
-
-$app = new \Slim\App(["settings" => $config]);
-
 $app->options('/{routes:.+}', function ($request, $response, $args) {
     return $response;
 });
